@@ -74,33 +74,31 @@ export default class Vote extends Component {
         <h3>Votar:</h3>
 
         <form onSubmit={this.registerVoting}>
-          <label>
-            {this.state.votings
-              ? this.state.votings.map((voting, i) => {
-                  return (
-                    <div>
-                      <label>
-                        Pauta: <b>{voting.name}</b>
-                      </label>
-                      <input
-                        type="radio"
-                        name={"voting_" + voting.id}
-                        onChange={() => this.vote(voting.id, "yes")}
-                      />{" "}
-                      Sim
-                      <input
-                        type="radio"
-                        name={"voting_" + voting.id}
-                        onChange={() => this.vote(voting.id, "yes")}
-                      />{" "}
-                      Não
-                      <br />
-                      <br />
-                    </div>
-                  );
-                })
-              : null}
-          </label>
+          {this.state.votings
+            ? this.state.votings.map((voting, i) => {
+                return (
+                  <div>
+                    <label>
+                      Pauta: <b>{voting.name}</b>
+                    </label>
+                    <input
+                      type="radio"
+                      name={"voting_" + voting.id}
+                      onChange={() => this.vote(voting.id, "sim")}
+                    />{" "}
+                    Sim
+                    <input
+                      type="radio"
+                      name={"voting_" + voting.id}
+                      onChange={() => this.vote(voting.id, "não")}
+                    />{" "}
+                    Não
+                    <br />
+                    <br />
+                  </div>
+                );
+              })
+            : null}
         </form>
       </div>
     );

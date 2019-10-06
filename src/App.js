@@ -5,6 +5,7 @@ import { Switch, Route, NavLink } from "react-router-dom";
 import CadastrarPauta from "./CadastrarPauta";
 import Vote from "./Vote";
 import Login from "./Login";
+import Results from "./Results";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         </div>
         <div>
           <Route path="/" exact component={Login} />
+        </div>
+        <div>
+          <Route path="/resultados" exact component={Results} />
         </div>
       </BrowserRouter>
     </div>
