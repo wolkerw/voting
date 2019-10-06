@@ -2,15 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
-
-    // Initial State
-    this.state = {
-      teste: "Sim"
-    };
-  }
-
   registerVoting = event => {
     event.preventDefault();
 
@@ -51,8 +42,7 @@ export default class Home extends Component {
       )
       // {orderId: 2})
       .then(res => {
-        alert("success");
-        console.log("res", res);
+        alert("Pauta cadastrada com sucesso!");
 
         /*const pdfBlob = new Blob([res.data], {
           type: "application/pdf"
@@ -68,7 +58,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h3>Nova pauta</h3>
+        <h3>Cadastrar nova pauta:</h3>
 
         <form onSubmit={this.registerVoting}>
           <label>

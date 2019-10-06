@@ -2,8 +2,9 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Switch, Route, NavLink } from "react-router-dom";
-import Home from "./Home";
-import Exemplo2 from "./Exemplo2";
+import CadastrarPauta from "./CadastrarPauta";
+import Vote from "./Vote";
+import Login from "./Login";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -12,10 +13,13 @@ function App() {
       <h2>Desafio Técnico</h2>
       <BrowserRouter>
         <div>
-          <Route path="/" exact component={Home} />
+          <Route path="/cadastrar-pauta" exact component={CadastrarPauta} />
         </div>
         <div>
-          <Route path="/exemplo2" exact component={Exemplo2} />
+          <Route path="/votar" exact component={Vote} />
+        </div>
+        <div>
+          <Route path="/" exact component={Login} />
         </div>
       </BrowserRouter>
     </div>
