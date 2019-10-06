@@ -39,7 +39,33 @@ export default class Vote extends Component {
   };
 
   vote = (votingId, description) => {
-    alert("Voto realizado com sucesso!");
+    let headers = {
+      "Content-Type": "application/graphql",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Method": "*",
+      "Access-Control-Allow-Header": "*"
+    };
+
+    axios
+      .post(
+        "http://localhost:8080/vote/add?votingId=" +
+          votingId +
+          "&userId=" +
+          localStorage.getItem("userId") +
+          "&description=" +
+          description,
+        {},
+        { headers: headers }
+      )
+      // {orderId: 2})
+      .then(res => {
+        alert("Voto realizado com sucesso!");
+
+        /*const pdfBlob = new Blob([res.data], {
+          type: "application/pdf"
+        });
+        saveAs(pdfBlob, "relatorio.pdf");*/
+      });
   };
 
   render() {
