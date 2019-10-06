@@ -9,7 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <h2>Teste</h2>
+      <h2>Desafio Técnico</h2>
       <BrowserRouter>
         <div>
           <Route path="/" exact component={Home} />
