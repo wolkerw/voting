@@ -5,7 +5,6 @@ export default class Vote extends Component {
   constructor(props) {
     super(props);
 
-    // Initial State
     this.state = {
       votings: []
     };
@@ -21,7 +20,6 @@ export default class Vote extends Component {
 
     axios
       .get("http://localhost:8080/voting/getAll", { headers: headers })
-      // {orderId: 2})
       .then(res => {
         console.log("res", res);
 
@@ -30,11 +28,6 @@ export default class Vote extends Component {
             votings: res.data
           });
         } else alert("Nenhuma pauta encontrada");
-
-        /*const pdfBlob = new Blob([res.data], {
-          type: "application/pdf"
-        });
-        saveAs(pdfBlob, "relatorio.pdf");*/
       });
   };
 
@@ -57,14 +50,8 @@ export default class Vote extends Component {
         {},
         { headers: headers }
       )
-      // {orderId: 2})
       .then(res => {
         alert("Voto realizado com sucesso!");
-
-        /*const pdfBlob = new Blob([res.data], {
-          type: "application/pdf"
-        });
-        saveAs(pdfBlob, "relatorio.pdf");*/
       });
   };
 
